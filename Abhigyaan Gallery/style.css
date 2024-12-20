@@ -1,0 +1,297 @@
+/* Gallery Menu Styling */
+.gallery_menu {
+  position: fixed;
+  top: 70px;
+  /* Adjust to account for navbar height */
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Menu Button Styles */
+.gallery_menu .portfolio-menu {
+  text-align: center;
+}
+
+/* General button styles */
+.gallery_menu .portfolio-menu button {
+  position: relative;
+  background: #ffffff;
+  /* White background */
+  color: #000000;
+  /* Black text */
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid #ddd;
+  /* Light border */
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  padding: 0.8rem 2rem;
+  transition: 0.2s;
+}
+
+.gallery_menu .portfolio-menu button:hover {
+  background: var(--clr);
+  /* Custom color */
+  color: #000000;
+  /* Black text on hover */
+  box-shadow: 0 0 15px var(--clr);
+  /* Subtle shadow effect */
+}
+
+.gallery_menu .portfolio-menu button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #ffffff;
+  /* White background behind the button */
+}
+
+.gallery_menu .portfolio-menu button span {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery_menu .portfolio-menu button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.gallery_menu .portfolio-menu button i::before,
+.gallery_menu .portfolio-menu button i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  border: 2px solid var(--clr);
+  /* Color of the lines */
+  background: #ffffff;
+  /* White background for lines */
+  transition: 0.2s;
+}
+
+.gallery_menu .portfolio-menu button i::before {
+  left: 80%;
+  top: -2px;
+}
+
+.gallery_menu .portfolio-menu button:hover i::before {
+  left: 20%;
+}
+
+.gallery_menu .portfolio-menu button i::after {
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+}
+
+.gallery_menu .portfolio-menu button:hover i::after {
+  left: 80%;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .gallery_menu .portfolio-menu button {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .gallery-menu-toggle {
+    display: block;
+    /* Show the toggle button on mobile */
+  }
+
+  .gallery_menu.dropdown {
+    display: none;
+    /* Hide dropdown by default */
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    /* Position directly below the navbar */
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* Ensure it appears above other elements */
+  }
+
+  .gallery_menu.dropdown.show {
+    display: block;
+    /* Show when toggled */
+  }
+
+  .gallery_menu.mobile {
+    display: none;
+    /* Hide by default on mobile devices */
+  }
+
+  .gallery_menu.mobile.show {
+    display: block;
+    /* Show when toggled */
+  }
+}
+
+/* Project Area */
+.gallery_area {
+  padding-top: 20px;
+  /* Ensure gallery is below the menu */
+  max-height: calc(100vh - 120px);
+  /* Prevent overflow */
+  overflow-y: auto;
+}
+
+@media (min-width: 769px) {
+  .gallery_area {
+    min-height: calc(100vh - 70px - 60px);
+    /* Adjust for the navbar height and footer height */
+    margin-bottom: 60px;
+    /* Ensure there's space for the footer */
+  }
+}
+
+.gallery_area .column_single_gallery_item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.gallery_area .column_single_gallery_item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery_area .column_single_gallery_item .hover_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery_area .column_single_gallery_item:hover .hover_overlay {
+  opacity: 1;
+}
+
+.gallery_area .column_single_gallery_item .hover_overlay a {
+  color: #fff;
+  font-size: 24px;
+}
+
+/* Logo Text Styling */
+.logo-text {
+  font-size: 30px;
+  /* Adjust font size as needed */
+  font-weight: bold;
+  color: #fff;
+  /* White color */
+  text-transform: uppercase;
+  text-decoration: none;
+  /* Remove underline */
+}
+
+/* Ensure the logo text aligns correctly */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  /* Remove default padding if needed */
+}
+
+footer {
+  height: 60px;
+  /* Adjust to match your footer height */
+  background-color: #f8f9fa;
+  /* Example background color */
+  position: relative;
+  /* Ensure it is positioned relative to the content */
+  width: 100%;
+  bottom: 0;
+}
+
+/* Basic styling for the gallery */
+.gallery_area {
+  padding: 20px;
+}
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column_single_gallery_item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+  width: calc(25% - 15px);
+  /* 4 images per row with spacing */
+}
+
+.column_single_gallery_item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hover_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.column_single_gallery_item:hover .hover_overlay {
+  opacity: 1;
+}
+
+.hover_overlay a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .column_single_gallery_item {
+    width: calc(33.333% - 15px);
+    /* 3 images per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .column_single_gallery_item {
+    width: calc(50% - 15px);
+    /* 2 images per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .column_single_gallery_item {
+    width: 100%;
+    /* 1 image per row */
+  }
+}
+
